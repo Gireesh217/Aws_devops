@@ -1,12 +1,12 @@
-provider "aws" {
-  region = "us-west-2"  # Specify your region
+provider"aws"{
+    region="us-west-2"
 }
-
-resource "aws_instance" "my_ec2_instance" {
-  ami           = "ami-0696e233fcd5f173e"  # Replace with a valid AMI ID in your region
-  instance_type = "t2.micro"               # Choose instance type
+resource "aws_instance" "own_ec2_instance" {
+  ami           = "ami-0696e233fcd5f173e"  # Replace with a valid AMI ID for your region
+  instance_type = "t2.micro"  # Your desired instance type
+  key_name      = "ec2-kp"  # Use the key pair name created manually in AWS
 
   tags = {
-    Name = "MyEC2Instance"
+    Name = "Aws_docker"
   }
 }
